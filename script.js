@@ -1,17 +1,15 @@
-const chatUrl = "https://jayryankerry.app.n8n.cloud/webhook/b7dc9adb-4d59-4659-b696-9fc6385285fa/chat";
-
 const buttons = document.querySelectorAll(
-  '#start-chat, .nav-button, .card-button, .primary-button[href="#chat"]'
+  '#start-chat, .nav-button, .card-button'
 );
 
 buttons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    if (
-      button.id === "start-chat" ||
-      button.classList.contains("card-button")
-    ) {
-      event.preventDefault();
-      window.open(chatUrl, "_blank");
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const chatButton = document.querySelector('.chat-window-toggle');
+
+    if (chatButton) {
+      chatButton.click();
     }
   });
 });
