@@ -273,14 +273,16 @@
 <script type="module">
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-  createChat({
-    webhookUrl: 'https://jayryankerry.app.n8n.cloud/webhook/b7dc9adb-4d59-4659-b696-9fc6385285fa/chat',
-    mode: 'window',
-    initialMessages: [
-      'Hi there! 👋',
-      "Tell us what you need help with and I'll take a few details for the team."
-    ]
-  });
+createChat({
+  webhookUrl: 'YOUR_EXISTING_N8N_WEBHOOK_URL',
+  mode: 'window',
+  loadPreviousSession: false,
+
+  initialMessages: [
+    'Hi there! ',
+    "Tell us what you need help with and I'll take a few details for the team."
+  ]
+});
 </script>
 </body>
 </html>
